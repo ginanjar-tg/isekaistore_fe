@@ -19,7 +19,7 @@ export default function Home() {
                     alt="Isekai Store"
                     className="object-cover relative"
                 />
-                <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex flex-col justify-center items-center">
+                <div className="absolute top-0 left-0 w-screen h-screen bg-black bg-opacity-50 flex flex-col justify-center items-center">
                     <div className="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                         {user ? (
                             <Link href="/dashboard">
