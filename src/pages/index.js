@@ -11,10 +11,20 @@ export default function Home() {
         <>
             <Head>
                 <title>Isekai Store</title>
+                <link rel="preconnect" href="https://fonts.googleapis.com" />
+                <link
+                    rel="preconnect"
+                    href="https://fonts.gstatic.com"
+                    crossorigin
+                />
+                <link
+                    href="https://fonts.googleapis.com/css2?family=VT323&display=swap"
+                    rel="stylesheet"
+                />
             </Head>
 
             <div class="snap-y snap-mandatory h-screen overflow-scroll overflow-x-hidden">
-                <div className="snap-start w-screen h-screen flex relative">
+                <div className="snap-start w-screen h-screen flex relative font-pixel">
                     <Image
                         src={IsekaiBg}
                         alt="Isekai Store"
@@ -44,16 +54,19 @@ export default function Home() {
                                 </>
                             )}
                         </div>
-                        <h1 className="text-5xl text-white font-bold mb-4">
-                            Isekai Store
+                        <h1 className="text-5xl md:text-7xl text-white font-bold mb-20 text-center">
+                            CONFIRM
                         </h1>
-                        <p className="text-white text-2xl mb-4">
-                            Welcome to the Isekai Store!
+                        <p className="text-white text-2xl md:text-3xl text-center mb-10">
+                            Are you sure you want to enter the Isekai Store?
                         </p>
-                        <div className="btn">
-                            <a href="#products" className="text-white text-2xl">
-                                Shop Now
-                            </a>
+                        <div className="flex space-x-2">
+                            <div className="btn px-10 border border-white text-2xl text-white">
+                                <a href="#products">YES</a>
+                            </div>
+                            <div className="btn px-10 border border-white text-2xl text-white">
+                                <a href="https://google.com">NO</a>
+                            </div>
                         </div>
                     </div>
                     <div className="absolute bottom-0 z-10 flex h-1/6 md:h-1/4 w-full space-x-10 md:space-x-28 justify-center">
