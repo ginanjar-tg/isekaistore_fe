@@ -1,1 +1,1 @@
-Made by GinanjarTG
+Built with Nextjs
