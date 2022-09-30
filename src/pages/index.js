@@ -14,7 +14,7 @@ function fetchData() {
                     <LandingPages />
                 </>,
             ])
-        }, 3000)
+        }, 5000)
     })
 }
 
