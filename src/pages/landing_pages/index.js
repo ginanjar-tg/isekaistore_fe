@@ -1,9 +1,9 @@
 import Head from 'next/head'
-import Page1 from './page1'
-import Page2 from './page2'
-import Page3 from './page3'
+import Slide1 from './slide1'
+import Slide2 from './slide2'
+import Slide3 from './slide3'
 
-export default function Pagehandler() {
+export default function LandingPages() {
     return (
         <>
             <Head>
@@ -21,9 +21,9 @@ export default function Pagehandler() {
             </Head>
 
             <div class="snap-y snap-mandatory h-screen overflow-scroll overflow-x-hidden">
-                <Page1 />
-                <Page2 />
-                <Page3 />
+                <Slide1 />
+                <Slide2 />
+                <Slide3 />
             </div>
         </>
     )

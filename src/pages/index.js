@@ -2,7 +2,7 @@ import { useEffect, useRef, useState, useLayoutEffect } from 'react'
 import Head from 'next/head.js'
 import Loading from '../../public/frog.gif'
 import Image from 'next/image'
-import Pagehandler from './contents/pagehandler'
+import LandingPages from './landing_pages'
 
 // fungsi untuk fetch data
 function fetchData() {
@@ -11,7 +11,7 @@ function fetchData() {
             resolve([
                 <>
                     <Head />
-                    <Pagehandler />
+                    <LandingPages />
                 </>,
             ])
         }, 3000)
@@ -58,7 +58,7 @@ export default function Home() {
                     <Head>
                         <title>Isekai Store</title>
                     </Head>
-                    <Pagehandler />
+                    <LandingPages />
                 </>
             ))}
         </div>

@@ -1,13 +1,13 @@
 import Image from 'next/image'
 import IsekaiBg from '../../../public/isekai_bg.jpg'
-import Loginregister from './loginregister'
+import LoginRegister from './login_register'
 
-const Page1 = () => {
+const Slide1 = () => {
     return (
         <div className="snap-start w-screen h-screen flex relative font-pixel">
             <Image src={IsekaiBg} alt="Isekai Store" className="object-cover" />
             <div className="absolute top-0 left-0 w-screen h-screen bg-black bg-opacity-50 flex flex-col justify-center items-center z-30">
-                <Loginregister />
+                <LoginRegister />
                 <h1 className="text-5xl md:text-7xl text-white font-bold mb-20 text-center">
                     CONFIRM
                 </h1>
@@ -31,4 +31,4 @@ const Page1 = () => {
     )
 }
 
-export default Page1
+export default Slide1
