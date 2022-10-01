@@ -44,7 +44,7 @@ export default function Home() {
         <div ref={el}>
             {!loadingState ? setLoadingState('start') : null}
             {loadingState === 'start' ? (
-                <div className="flex h-screen w-screen">
+                <div className="flex h-screen w-screen bg-gray-900">
                     <div className="m-auto">
                         <Image src={Loading} alt="loading..." />
                         <div className="text-center text-white font-semibold italic py-5 text-2xl">
