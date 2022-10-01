@@ -20,7 +20,7 @@ export default function LandingPages() {
                 />
             </Head>
 
-            <div class="snap-y snap-mandatory h-screen overflow-scroll overflow-x-hidden">
+            <div class="h-screen overflow-x-hidden">
                 <Slide1 />
                 <Slide2 />
                 <Slide3 />

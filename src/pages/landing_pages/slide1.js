@@ -4,7 +4,7 @@ import LoginRegister from './login_register'
 
 const Slide1 = () => {
     return (
-        <div className="snap-start w-screen h-screen flex relative font-pixel">
+        <div className="w-screen h-screen flex relative font-pixel">
             <Image src={IsekaiBg} alt="Isekai Store" className="object-cover" />
             <div className="absolute top-0 left-0 w-screen h-screen bg-black bg-opacity-50 flex flex-col justify-center items-center z-30">
                 <LoginRegister />
