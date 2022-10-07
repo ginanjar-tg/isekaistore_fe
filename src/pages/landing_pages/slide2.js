@@ -21,7 +21,7 @@ const Page2 = () => {
                 />
             </Head>
 
-            <div className="overflow-x-hidden w-screen h-screen flex relative font-pixel">
+            <div className="overflow-hidden w-screen h-screen flex relative font-pixel">
                 <Image
                     src={ShopBg}
                     alt="Isekai Store"
