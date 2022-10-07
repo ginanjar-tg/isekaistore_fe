@@ -11,7 +11,6 @@ function fetchData() {
             resolve([
                 <>
                     <Head />
-                    <LandingPages />
                 </>,
             ])
         }, 3000)
