@@ -70,9 +70,10 @@ export default function LandingPages() {
                         </div>
                     </div>
                     <div className="absolute bottom-0 z-10 flex h-1/6 md:h-1/4 w-full space-x-10 md:space-x-28 justify-center">
-                        <img src="/megumin.gif" alt="megumin" />
-                        <img src="/isekaimaou.gif" alt="isekai maou" />
+                        {/* <img src="/megumin.gif" alt="megumin" />
+                        <img src="/isekaimaou.gif" alt="isekai maou" /> */}
                     </div>
+                    <div class="bg-gradient-to-b from-transparent via-transparent to-black w-screen h-screen absolute"></div>
                 </div>
                 {isShown && <Slide2 />}
                 {isShown && <Slide3 />}
