@@ -40,7 +40,7 @@ module.exports = {
         semi: ['error', 'never'],
         'prettier/prettier': [
             'error',
-            { endOfLine: 'auto' },
+            { endOfLine: 'off' },
             { usePrettierrc: true },
         ],
     },
