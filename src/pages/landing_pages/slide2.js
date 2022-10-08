@@ -44,7 +44,6 @@ const Page2 = () => {
                         </p>
                     </div>
                 </div>
-                <div className="absolute bg-gradient-to-t from-black via-transparent to-black w-screen h-screen"></div>
             </div>
         </>
     )
