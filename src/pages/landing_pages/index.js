@@ -17,12 +17,6 @@ export default function LandingPages() {
         setIsShown(current => !current)
         setNotShown(current => !current)
     }
-    const NoSSRWrapper = props => (
-        <React.Fragment>{props.children}</React.Fragment>
-    )
-    const NoSSRComponent = dynamic(() => Promise.resolve(NoSSRWrapper), {
-        ssr: false,
-    })
     return (
         <>
             <Head>
