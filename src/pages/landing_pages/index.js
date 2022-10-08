@@ -9,10 +9,25 @@ import Slide2 from './slide2'
 import Slide3 from './slide3'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination, Scrollbar, A11y, Mousewheel } from 'swiper'
+import { useEffect } from 'react'
 
-export default function LandingPages() {
+//import material
+import megumin from '../../../public/megumin.gif'
+import isekaimaou from '../../../public/isekaimaou.gif'
+
+export default function LandingPages(props) {
     const [isShown, setIsShown] = useState(false)
     const [notShown, setNotShown] = useState(true)
+    const [imgMegumin, setImgMegumin] = useState(false)
+
+    //Check Image Resource(Currently only megumin gif) then pass value to parent component
+    useEffect(() => {
+        if (imgMegumin) {
+            props.onLoadIMG(false)
+            console.log("imagePropsUpdate") //debug
+        }
+    }, [imgMegumin])
+
     const handleClick = event => {
         setIsShown(current => !current)
         setNotShown(current => !current)
@@ -35,9 +50,9 @@ export default function LandingPages() {
 
             <div class="h-screen overflow-hidden">
                 <Swiper
+                    className="h-screen"
                     tag="div"
                     speed={400}
-                    autoHeight={true}
                     direction={'vertical'}
                     pagination={{ clickable: true }}
                     modules={[
@@ -92,8 +107,14 @@ export default function LandingPages() {
                                 </div>
                             </div>
                             <div className="absolute bottom-0 z-10 flex h-1/6 md:h-1/4 w-full space-x-10 md:space-x-28 justify-center">
-                                <img src="/megumin.gif" alt="megumin" />
-                                <img src="/isekaimaou.gif" alt="isekai maou" />
+                                <div className='w-40 h-full flex'>
+                                    <Image className='object-contain' src={megumin}
+                                        alt="megumin" 
+                                        //set Image megumin to true after fully load
+                                        onLoadingComplete={() => setImgMegumin(true)}/></div>
+                                <div className='w-80 h-full flex'>
+                                    <Image className='object-contain' src={isekaimaou} alt="isekai maou" />
+                                </div>
                             </div>
                         </div>
                     </SwiperSlide>
