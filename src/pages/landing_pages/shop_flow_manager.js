@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Page2 from './Page2';
-import Page3 from './Page3';
+import Page2 from './page2';
+import Page3 from './page3';
 
 const ShopFlowManager = () => {
     const [currentPage, setCurrentPage] = useState('page2');
