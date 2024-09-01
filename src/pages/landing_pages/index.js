@@ -3,10 +3,11 @@ import { useState } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import dynamic from 'next/dynamic'
-import IsekaiBg from '../../../public/isekai_bg.jpg'
+import IsekaiBg from '../../../public/isekai_bg.webp'
 import LoginRegister from './login_register'
-import Slide2 from './slide2'
-import Slide3 from './slide3'
+import ShopFlowManager from './shop_flow_manager'
+import Page2 from './page2'
+import Page3 from './page3'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination, Scrollbar, A11y, Mousewheel } from 'swiper'
 import { useEffect } from 'react'
@@ -17,6 +18,7 @@ import isekaimaou from '../../../public/isekaimaou.gif'
 
 export default function LandingPages(props) {
     const [isShown, setIsShown] = useState(false)
+    const [messageShown, setMessageShown] = useState(false);
     const [notShown, setNotShown] = useState(true)
     const [imgMegumin, setImgMegumin] = useState(false)
 
@@ -32,6 +34,12 @@ export default function LandingPages(props) {
         setIsShown(current => !current)
         setNotShown(current => !current)
     }
+
+    const handleNoClick = () => {
+        setMessageShown(true);
+        setNotShown(false);
+    }
+
     return (
         <>
             <Head>
@@ -40,7 +48,7 @@ export default function LandingPages(props) {
                 <link
                     rel="preconnect"
                     href="https://fonts.gstatic.com"
-                    crossorigin
+                    crossOrigin="true"
                 />
                 <link
                     href="https://fonts.googleapis.com/css2?family=VT323&display=swap"
@@ -48,21 +56,16 @@ export default function LandingPages(props) {
                 />
             </Head>
 
-            <div class="h-screen overflow-hidden">
+            <div className="h-screen overflow-hidden">
                 <Swiper
                     className="h-screen"
                     tag="div"
                     speed={400}
                     direction={'vertical'}
                     pagination={{ clickable: true }}
-                    modules={[
-                        Navigation,
-                        Pagination,
-                        Scrollbar,
-                        A11y,
-                        Mousewheel,
-                    ]}
-                    mousewheel={{}}>
+                    modules={[Navigation, Pagination, Scrollbar, A11y, Mousewheel]}
+                    mousewheel={{}}
+                >
                     <SwiperSlide>
                         <div className="w-screen h-screen flex relative font-pixel">
                             <Image
@@ -77,8 +80,7 @@ export default function LandingPages(props) {
                                         CONFIRM
                                     </h1>
                                     <p className="text-white text-2xl md:text-3xl text-center py-5">
-                                        Are you sure you want to enter the
-                                        Isekai Store?
+                                        Are you sure you want to enter the Isekai Store?
                                     </p>
                                     {notShown && (
                                         <div className="grid grid-cols-2 justify-center items-center space-x-5 p-5">
@@ -87,10 +89,10 @@ export default function LandingPages(props) {
                                                 className="btn bg-blue-600 text-white text-2xl">
                                                 YES
                                             </button>
-                                            <button className="btn bg-blue-600 text-white text-2xl">
-                                                <a href="https://google.com">
-                                                    NO
-                                                </a>
+                                            <button
+                                                onClick={handleNoClick}
+                                                className="btn bg-blue-600 text-white text-2xl">
+                                                NO
                                             </button>
                                         </div>
                                     )}
@@ -99,19 +101,22 @@ export default function LandingPages(props) {
                                         <div className="text-white text-2xl md:text-3xl text-center">
                                             - YES - <br />
                                             <p className="py-5">
-                                                Great! Now please scroll down to
-                                                go inside the store.
+                                                Great! Now scroll down to go inside the store.
                                             </p>
+                                        </div>
+                                    )}
+
+                                    {messageShown && (
+                                        <div className="text-white text-2xl md:text-3xl text-center py-5">
+                                            Alright then, have a nice day!
                                         </div>
                                     )}
                                 </div>
                             </div>
                             <div className="absolute bottom-0 z-10 flex h-1/6 md:h-1/4 w-full space-x-10 md:space-x-28 justify-center">
                                 <div className='w-40 h-full flex'>
-                                    <Image className='object-contain' src={megumin}
-                                        alt="megumin" 
-                                        //set Image megumin to true after fully load
-                                        onLoadingComplete={() => setImgMegumin(true)}/></div>
+                                    <Image className='object-contain' src={megumin} alt="megumin" onLoadingComplete={() => setImgMegumin(true)} />
+                                </div>
                                 <div className='w-80 h-full flex'>
                                     <Image className='object-contain' src={isekaimaou} alt="isekai maou" />
                                 </div>
@@ -121,16 +126,11 @@ export default function LandingPages(props) {
 
                     {isShown && (
                         <SwiperSlide>
-                            <Slide2 />
-                        </SwiperSlide>
-                    )}
-                    {isShown && (
-                        <SwiperSlide>
-                            <Slide3 />
+                            <ShopFlowManager />
                         </SwiperSlide>
                     )}
                 </Swiper>
             </div>
         </>
-    )
+    );
 }
