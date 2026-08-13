@@ -1,33 +1,33 @@
 import type { Metadata } from "next";
-import { Cinzel, Nunito, VT323 } from "next/font/google";
+import { Bungee, Caveat, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 
-const cinzel = Cinzel({
+const bungee = Bungee({
   subsets: ["latin"],
-  variable: "--font-cinzel",
-  display: "swap",
-});
-
-const vt323 = VT323({
   weight: "400",
-  subsets: ["latin"],
-  variable: "--font-vt323",
+  variable: "--font-bungee",
   display: "swap",
 });
 
-const nunito = Nunito({
+const space = Space_Grotesk({
   subsets: ["latin"],
-  variable: "--font-nunito",
+  variable: "--font-space",
+  display: "swap",
+});
+
+const caveat = Caveat({
+  subsets: ["latin"],
+  variable: "--font-caveat",
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Isekai Store — The Gate to Another World",
+  title: "Isekai Store",
   description:
-    "A magical shop beyond the gate. Step inside, adventurer — your legend awaits.",
+    "An impossible delivery from another world. Open the case, choose your gear, and survive the episode.",
   openGraph: {
     title: "Isekai Store",
-    description: "The gate to another world is open. Step inside, adventurer.",
+    description: "A chaotic anime adventure has arrived from another world.",
   },
 };
 
@@ -39,7 +39,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${cinzel.variable} ${vt323.variable} ${nunito.variable}`}
+      className={`${bungee.variable} ${space.variable} ${caveat.variable}`}
     >
       <body className="font-body antialiased">{children}</body>
     </html>

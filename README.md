@@ -1,14 +1,18 @@
-# Isekai Store
+# Isekai Store // Midnight Delivery
 
-A magical shop beyond the gate. A fun dark-fantasy RPG storefront built with
-Next.js 16, React 19, Tailwind CSS 4, and Swiper.
+A chaotic anime episode disguised as an impossible delivery. Built with
+Next.js 16, React 19, TypeScript, and Tailwind CSS 4.
 
-## The Journey
+## The Episode
 
-1. **Summoning** — the preloader summons the store
-2. **The Gate** — confirm you want to enter the Isekai Store
-3. **The Shopkeeper** — a warm welcome before you browse
-4. **The Store** — rare goods, a bag of gold, and a cinematic checkout
+1. **Signal** — receive a transmission from another world
+2. **Portal** — choose how dramatically to enter
+3. **Counter** — let the shopkeeper judge your personality
+4. **Case** — inspect strange objects and pack one
+5. **Loadout** — receive a personalized adventurer card
+
+There is no backend, account system, money, checkout, or random reward loop.
+The experience is intentionally a small interactive anime story.
 
 ## Development
 
@@ -24,7 +28,8 @@ npm run dev
 | `npm run dev` | start the dev server |
 | `npm run lint` | ESLint |
 | `npm run typecheck` | TypeScript type check |
-| `npm run test` | Vitest unit tests (cart reducer) |
+| `npm run test` | Vitest episode state tests |
 
-All data is hardcoded in `lib/items.ts` and `lib/dialogue.ts` — this is a
-backend-free fun project.
+Episode data is hardcoded in `lib/episode.ts`. Optional music and sound effects
+can be placed in `public/audio`; missing audio never blocks the story. See the
+asset brief in `docs/assets/isekaistore-anime-asset-brief.md`.
