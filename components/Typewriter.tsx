@@ -19,6 +19,11 @@ export default function Typewriter({
 }: TypewriterProps) {
   const [out, setOut] = useState("");
   const doneRef = useRef(false);
+  const onDoneRef = useRef(onDone);
+
+  useEffect(() => {
+    onDoneRef.current = onDone;
+  }, [onDone]);
 
   useEffect(() => {
     doneRef.current = false;
@@ -31,12 +36,12 @@ export default function Typewriter({
         timer = setTimeout(tick, speed);
       } else if (!doneRef.current) {
         doneRef.current = true;
-        onDone?.();
+        onDoneRef.current?.();
       }
     };
     timer = setTimeout(tick, startDelay);
     return () => clearTimeout(timer);
-  }, [text, speed, startDelay, onDone]);
+  }, [text, speed, startDelay]);
 
   return (
     <span className={className}>
